@@ -2,8 +2,9 @@ import React from 'react';
 import './AnimalSounds.css';
 
 // Placeholder data for animals (add actual image and sound paths)
+
 const animals = [
-  { name: 'Dog', img: 'images/dog.jpg', sound: 'sounds/dog-bark.mp3' },
+  { name: 'Dog', img: 'animal-images/dog.jpg', sound: '/animal-sounds/dog-bark.mp3' },
   { name: 'Cat', img: 'images/cat.jpg', sound: 'sounds/cat-meow.mp3' },
   { name: 'Cow', img: 'images/cow.jpg', sound: 'sounds/cow-moo.mp3' },
 ];
