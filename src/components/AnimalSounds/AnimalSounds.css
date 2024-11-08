@@ -1,16 +1,38 @@
-/* AnimalSounds.css */
 .animal-sounds {
     text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
   }
   
-  .animal-sounds img {
+  .animal-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .animal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .animal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .animal-image {
     width: 100px;
     height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
   }
   
-  .animal-sounds p {
-    font-size: 16px;
-    color: #333;
+  .animal-name {
+    font-weight: bold;
+    margin-top: 8px;
   }
   
