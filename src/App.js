@@ -27,6 +27,9 @@ function App() {
         </Routes>
     </div>
     </Router>
+    function Home() {
+      return <p>Welcome to the learning game! Choose an activity to start.</p>;
+    }
     
   );
 }
