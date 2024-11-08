@@ -1,34 +1,37 @@
 import React from 'react';
 import './AnimalSounds.css';
 
-
-// Placeholder data for animals (you can add actual images and sound files here)
+// Placeholder data for animals (add actual image and sound paths)
 const animals = [
-  { name: 'Dog', img: 'dog.jpg', sound: 'dog-bark.mp3' },
-  { name: 'Cat', img: 'cat.jpg', sound: 'cat-meow.mp3' },
-  { name: 'Cow', img: 'cow.jpg', sound: 'cow-moo.mp3' },
+  { name: 'Dog', img: 'images/dog.jpg', sound: 'sounds/dog-bark.mp3' },
+  { name: 'Cat', img: 'images/cat.jpg', sound: 'sounds/cat-meow.mp3' },
+  { name: 'Cow', img: 'images/cow.jpg', sound: 'sounds/cow-moo.mp3' },
 ];
 
 function AnimalSounds() {
-  const playSound = (sound) => {
-    const audio = new Audio(sound);
-    audio.play();
+  const playSound = (soundFile) => {
+    const audio = new Audio(soundFile);
+    audio.play().catch(error => console.log('Audio play error:', error));
   };
 
   return (
-    <div>
+    <div className="animal-sounds">
       <h2>Animal Sounds</h2>
       <p>Click on an animal to hear its sound!</p>
-      <div style={{ display: 'flex', gap: '20px' }}>
+      <div className="animal-grid">
         {animals.map((animal) => (
-          <div key={animal.name} onClick={() => playSound(animal.sound)}>
+          <div
+            key={animal.name}
+            className="animal-card"
+            onClick={() => playSound(animal.sound)}
+          >
             <img
               src={animal.img}
               alt={animal.name}
-              width="100"
-              height="100"
+              className="animal-image"
+              onError={(e) => e.target.src = 'images/placeholder.jpg'}
             />
-            <p>{animal.name}</p>
+            <p className="animal-name">{animal.name}</p>
           </div>
         ))}
       </div>

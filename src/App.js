@@ -13,6 +13,7 @@ function App() {
     <Router>
 <div>
       <h1>Welcome to My Learning Game!</h1>
+      <h3> Click on the activity </h3>
       <nav>
           <Link to="/">Home</Link> | <Link to="/animal-sounds">Animal Sounds</Link>
       </nav>
@@ -25,7 +26,7 @@ function App() {
 
           {/* Animal Sounds Route */}
           <Route path="/animal-sounds" element={<AnimalSounds />} />
-        </Routes>
+      </Routes>
     </div>
     </Router>
     
